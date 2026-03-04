@@ -1,62 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Analysis Result</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #43cea2, #185a9d);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<div class="card">
+    <h1>Resume Analysis Result</h1>
 
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 350px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        .result {
-            font-size: 22px;
-            margin: 20px 0;
-            color: #185a9d;
-            font-weight: bold;
-        }
-
-        a {
-            text-decoration: none;
-            background: #43cea2;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        a:hover {
-            background: #2bbf8a;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="card">
-        <h1>Resume Analysis Result</h1>
-        <div class="result">
-            Total Words: {{ words }}
-        </div>
-        <a href="/">Analyze Another Resume</a>
+    <div class="result">
+        Total Words: {{ words }}
     </div>
 
-</body>
-</html>
+    <div class="result">
+        Resume Score: {{ score }}/100
+    </div>
+
+    <div>
+        <strong>Skills Found:</strong>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="result">
+        {{ feedback }}
+    </div>
+
+    <a href="/">Analyze Another Resume</a>
+</div>
